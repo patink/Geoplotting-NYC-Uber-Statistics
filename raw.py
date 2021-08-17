@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-DATE_TIME = 'date/time'
+DATE_TIME = 'dt'
 
 @st.cache
 def load_data(nrows):
