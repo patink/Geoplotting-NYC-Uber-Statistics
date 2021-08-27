@@ -16,7 +16,11 @@ data = load_data(10000)
 
 hour = st.slider('Selected hour',0,0,23,1)
 data = data[data[DATE_TIME].dt.hour == hour]
- 
+
+if st.checkbox('View Data'):
+    st.subheader('Raw Data')
+    st.write(data)
+
 
 st.subheader('Data by Minute at %sh' % hour)    
 st.bar_chart(np.histogram(data[DATE_TIME].dt.minute, bins=60, range=(0,60))[0])
